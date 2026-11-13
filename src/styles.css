@@ -348,3 +348,52 @@ body{background:#f5f8fc;color:#14294b}
   .section-heading,.feature-tile,.staff-dashboard button,.login-icon,.modal-card,.toast,
   .bottom-nav button.nav-active svg{animation:none!important}
 }
+
+
+/* Transição de entrada acionada pelo clique em "Começar". */
+.start-spinner{
+  width:16px;height:16px;border:2px solid rgba(23,55,96,.22);
+  border-top-color:#e52b43;border-radius:50%;display:inline-block;
+  animation:hs-start-spin .65s linear infinite;
+}
+.splash.is-launching .splash-content{
+  animation:hs-launch-out .82s cubic-bezier(.65,0,.35,1) both;
+  pointer-events:none;
+}
+.splash.is-launching .splash-orb{animation:hs-orb-burst .82s ease-in both}
+.splash.is-launching:before{animation:hs-corner-out .82s ease-in both}
+.splash.is-launching:after{animation:hs-corner-out .82s ease-in both}
+.splash.is-launching{animation:hs-splash-fade .85s ease-in both}
+.splash.is-launching .brand-mark{
+  animation:hs-logo-launch .82s cubic-bezier(.2,.8,.2,1) both;
+}
+.splash.is-launching .btn{
+  transform:scale(1.04);
+  box-shadow:0 0 0 9px rgba(255,255,255,.2),0 15px 35px rgba(24,55,94,.2);
+}
+.splash.is-launching .btn:before{display:none}
+@keyframes hs-start-spin{to{transform:rotate(360deg)}}
+@keyframes hs-launch-out{
+  0%{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}
+  35%{opacity:1;transform:scale(1.035) translateY(-5px);filter:blur(0)}
+  100%{opacity:0;transform:scale(.88) translateY(-22px);filter:blur(8px)}
+}
+@keyframes hs-logo-launch{
+  0%{transform:scale(1) rotate(0)}
+  45%{transform:scale(1.13) rotate(-7deg)}
+  100%{transform:scale(.65) rotate(12deg);opacity:0}
+}
+@keyframes hs-orb-burst{
+  0%{opacity:1;transform:scale(1)}
+  100%{opacity:0;transform:scale(1.8)}
+}
+@keyframes hs-corner-out{
+  to{opacity:0;transform:scale(1.25)}
+}
+@keyframes hs-splash-fade{
+  0%,55%{background-color:transparent}
+  100%{background-color:#fff}
+}
+@media(prefers-reduced-motion:reduce){
+  .splash.is-launching,.splash.is-launching *{animation:none!important}
+}
