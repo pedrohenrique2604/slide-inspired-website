@@ -400,3 +400,6 @@ body{background:#f5f8fc;color:#14294b}
 
 /* Matérias com notas por período */
 .subject-row>span{font-weight:800;color:#294b70;min-width:82px}.subject-scores{font-size:9px;color:#66809b;text-align:right;line-height:1.45;max-width:68%;font-weight:800}.subject-manage-list{display:grid;gap:2px;max-height:250px;overflow:auto;padding-right:3px}.subject-manage-list .subject-row{padding:7px 2px}
+
+/* Consulta de médias por nome e ano */
+.grade-results-area{margin-top:18px;padding:4px 0 10px}.grade-results-area .subhead{margin-top:8px}.student-list button{width:100%;display:block;text-align:left;background:#fff;border:0;border-radius:10px;padding:10px;margin:3px 0;color:#294b70}.student-list button b,.student-list button small{display:block}.student-list button small{font-size:10px;color:#8291a5;margin-top:3px}
