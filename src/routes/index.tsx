@@ -194,7 +194,7 @@ function HelpSchool() {
       {screen === "classes" && <main className="class-screen">
         <header className="simple-header"><div className="brand-small"><GraduationCap/> HELP SCHOOL</div><span className="tag">ÁREA ESCOLAR</span></header>
         <div className="class-intro"><span className="eyebrow blue">VAMOS COMEÇAR?</span><h1>Quem vai<br/><span>estudar hoje?</span></h1><p>Escolha sua turma para acessar as novidades da escola.</p></div>
-        <div className="class-list">{[5,6,7,8,9].map((n,i)=><button className="class-option" key={n} onClick={() => chooseClass(n)}><span className="class-emoji">{["📘","📗","📙","📕","🎓"][i]}</span><span><b>{labelYear(n)}</b><small>Área do estudante</small></span><ChevronRight className="class-arrow"/></button>)}
+        <div className="class-list">{[5,6,7,8,9].map((n,i)=><button className="class-option" key={n} onClick={() => chooseClass(n)}><span className="class-emoji">{["📘","📗","📙","📕","🎓"][i]}</span><span><b>{labelYear(n)}</b></span><ChevronRight className="class-arrow"/></button>)}
           <button className="class-option staff-option" onClick={() => setScreen("staffLogin")}><span className="class-emoji"><ShieldCheck/></span><span><b>Professores e diretores</b><small>Acesso da equipe escolar</small></span><ChevronRight className="class-arrow"/></button></div>
         {staff && <div className="connected-card"><div><b>Conectado como {staff.name}</b><small>{staff.role === "director" ? "Direção" : "Professor(a)"}</small></div><button onClick={logoutStaff}>Sair da conta de professor/diretor</button></div>}
         <p className="muted center tiny">Help School • Ensino Fundamental</p>
