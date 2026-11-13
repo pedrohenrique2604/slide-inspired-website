@@ -53,6 +53,12 @@ function strongPassword(value: string) { return value.length >= 8 && /[A-Z]/.tes
 
 function HelpSchool() {
   const [screen, setScreen] = useState<"splash" | "classes" | "staffLogin" | "home" | "more">("splash");
+  const [launching, setLaunching] = useState(false);
+  function startApp() {
+    if (launching) return;
+    setLaunching(true);
+    window.setTimeout(() => setScreen("classes"), 850);
+  }
   const [year, setYear] = useState<number | null>(null);
   const [staff, setStaff] = useState<Staff | null>(null);
   const [section, setSection] = useState("home");
@@ -180,9 +186,9 @@ function HelpSchool() {
   return (
     <div className="app-shell">
       {toast && <div className="toast"><CheckCircle2 size={18}/>{toast}</div>}
-      {screen === "splash" && <main className="splash">
+      {screen === "splash" && <main className={`splash${launching ? " is-launching" : ""}`}>
         <div className="splash-orb orb-one"/><div className="splash-orb orb-two"/><div className="splash-orb orb-three"/>
-        <div className="splash-content"><div className="brand-mark"><GraduationCap size={54}/></div><p className="eyebrow">SUA ESCOLA, MAIS CONECTADA</p><h1>HELP <span>SCHOOL</span></h1><p className="splash-copy">Aprender, organizar e compartilhar.<br/>Tudo em um só lugar!</p><button className="btn btn-white btn-xl" onClick={() => setScreen("classes")}>Começar <ChevronRight size={20}/></button><span className="splash-foot">Tecnologia que facilita a vida na escola</span></div>
+        <div className="splash-content"><div className="brand-mark"><GraduationCap size={54}/></div><p className="eyebrow">SUA ESCOLA, MAIS CONECTADA</p><h1>HELP <span>SCHOOL</span></h1><p className="splash-copy">Aprender, organizar e compartilhar.<br/>Tudo em um só lugar!</p><button className="btn btn-white btn-xl" onClick={startApp} disabled={launching}>{launching ? <>Preparando... <span className="start-spinner"/></> : <>Começar <ChevronRight size={20}/></>}</button><span className="splash-foot">Tecnologia que facilita a vida na escola</span></div>
       </main>}
 
       {screen === "classes" && <main className="class-screen">
