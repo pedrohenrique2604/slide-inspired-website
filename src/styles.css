@@ -103,3 +103,81 @@ input::placeholder,textarea::placeholder{color:#a0adbb}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* HELP SCHOOL — acabamento visual das interfaces internas
+   A tela inicial (.splash) e sua paleta permanecem intocadas. */
+:root{--hs-radius-card:20px;--hs-focus:rgba(56,126,186,.18)}
+button{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--hs-focus);outline-offset:2px}
+.page-content{isolation:isolate}
+.section-heading{margin-top:30px;margin-bottom:16px}
+.section-heading h2{letter-spacing:-.035em}
+.feature-tile{min-height:148px;justify-content:flex-start}
+.feature-tile:focus-visible,.staff-dashboard button:focus-visible,.class-option:focus-visible{outline-offset:3px}
+.tip-card,.panel-card,.about-card,.confirm-box,.grade-period,.meal-card,.video-card{box-shadow:0 7px 20px rgba(25,55,88,.045)}
+.tip-card{border:1px solid #e9eff6;background:linear-gradient(145deg,#fff,#f7f9fc);border-radius:18px}
+.module{padding:20px 18px 26px}
+.module-header{padding-bottom:13px;border-bottom:1px solid #edf1f6}
+.module-header h1{line-height:1.2}
+.module-header p{line-height:1.45}
+.subhead{letter-spacing:-.015em;margin-top:22px}
+.exam-row,.task-row,.meal-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.task-row{background:#fff;align-items:center}
+.task-row:focus-within{border-color:#c8d9eb;box-shadow:0 0 0 3px rgba(56,126,186,.08)}
+.lost-card{box-shadow:0 5px 16px rgba(25,55,88,.055)}
+.lost-card img{transition:transform .35s ease}
+.lost-card:hover img{transform:scale(1.035)}
+.filter-pills button,.day-tabs button,.staff-tabs button{transition:background .18s,color .18s,transform .18s,border-color .18s}
+.filter-pills button:active,.day-tabs button:active,.staff-tabs button:active{transform:scale(.97)}
+.event-card{padding:15px 10px;border:1px solid #edf1f6;border-radius:16px;margin:9px 0;background:#fff}
+.event-card h3{font-size:14px;letter-spacing:-.015em}
+.event-card p{font-size:11px;line-height:1.55}
+.event-date{box-shadow:inset 0 0 0 1px rgba(43,105,170,.06)}
+.week-switch{border:1px solid #e8eef5;background:#f8fafd}
+.day-tabs button{border:1px solid #e8eef5}
+.day-tabs button.selected{border-color:#e52b43}
+.meal-card{background:linear-gradient(145deg,#fff,#fbfcfe);align-items:center}
+.meal-emoji{flex-shrink:0}
+.grade-login{padding:22px 8px}
+.grade-login h2{letter-spacing:-.03em}
+.student-grade-head{border:1px solid #e8eef5;box-shadow:0 5px 16px rgba(25,55,88,.04)}
+.grade-period{margin-top:14px}
+.grade-row{grid-template-columns:minmax(0,1fr) 48px 82px;gap:7px}
+.grade-row>span:first-child{overflow-wrap:anywhere}
+.staff-shortcut{box-shadow:0 6px 18px rgba(189,44,67,.055);transition:transform .18s,box-shadow .18s}
+.staff-shortcut:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(189,44,67,.1)}
+.staff-dashboard button{position:relative;overflow:hidden;min-height:138px}
+.staff-dashboard button:after{content:"";position:absolute;width:78px;height:78px;right:-30px;bottom:-35px;border-radius:50%;background:rgba(36,91,145,.045)}
+.staff-dashboard button:focus-visible{outline-offset:2px}
+.staff-tabs{overflow-x:auto;padding:2px 1px 7px;scrollbar-width:none}
+.staff-tabs::-webkit-scrollbar,.filter-pills::-webkit-scrollbar{display:none}
+.subject-list,.student-list{overflow:hidden}
+.subject-row{gap:10px}
+.subject-row>span{overflow-wrap:anywhere}
+.search-label input{min-height:46px}
+.two-fields{align-items:start}
+.stack-form label{line-height:1.35}
+.stack-form .btn{margin-top:4px}
+.empty-state{color:#71839a}
+.empty-state svg{opacity:.7}
+.modal-card{width:min(460px,100%);max-height:min(88vh,760px)}
+.modal-card form{gap:13px}
+.modal-head{position:sticky;top:-22px;z-index:1;padding:2px 0 12px;background:#fff}
+.toast{font-size:12px;line-height:1.4}
+.more-page .about-card{background:linear-gradient(145deg,#fff,#f4f8fd)}
+.bottom-nav button{transition:color .18s,transform .18s}
+.bottom-nav button:active{transform:translateY(-2px)}
+@media(min-width:600px){
+  .app-shell{box-shadow:0 28px 90px rgba(20,43,73,.16)}
+  .page-content{padding-left:24px;padding-right:24px}
+  .module{padding:22px}
+}
+@media(max-width:380px){
+  .feature-grid,.staff-dashboard{gap:9px}
+  .feature-tile{padding:13px;min-height:140px}
+  .feature-tile b{font-size:12px}
+  .module{padding:15px 13px 22px}
+  .grade-row{grid-template-columns:minmax(0,1fr) 42px 72px;font-size:10px}
+  .grade-row b{font-size:12px}
+}
