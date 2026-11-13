@@ -248,3 +248,103 @@ body{background:#f5f8fc;color:#14294b}
 @media(prefers-reduced-motion:reduce){
  .splash-content,.splash-content *, .splash-orb,.splash:before,.splash:after{animation:none!important;transition:none!important}
 }
+
+
+/* HELP SCHOOL — gradientes pastel e animações perceptíveis em TODAS as telas */
+:root{
+  --hs-pink:#f8cbd2;--hs-red:#e52b43;--hs-sky:#cfe3fb;
+  --hs-lilac:#e2d8fa;--hs-mint:#d4efdf;--hs-peach:#ffe1c6;
+}
+@keyframes hs-screen-in{
+  from{opacity:0;transform:translateY(22px) scale(.988);filter:blur(3px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+@keyframes hs-card-in{
+  0%{opacity:0;transform:translateY(18px) scale(.97)}
+  75%{opacity:1;transform:translateY(-2px) scale(1.005)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes hs-soft-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+@keyframes hs-gradient-flow{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+@keyframes hs-glow-pulse{
+  0%,100%{box-shadow:0 8px 22px rgba(229,43,67,.10)}
+  50%{box-shadow:0 13px 30px rgba(54,126,190,.18)}
+}
+/* Troca de telas com entrada suave, sem mexer na estrutura ou nos dados. */
+.class-screen,.login-screen,.page-content,.more-page{
+  animation:hs-screen-in .55s cubic-bezier(.2,.75,.25,1) both;
+}
+.module{
+  animation:hs-screen-in .48s cubic-bezier(.2,.75,.25,1) both;
+  background:linear-gradient(145deg,#fff 0%,#fff 62%,#fbf7ff 100%);
+}
+.class-intro{position:relative}
+.class-intro:after{
+  content:"";display:block;width:76px;height:5px;margin-top:17px;border-radius:9px;
+  background:linear-gradient(90deg,#e52b43,#f3a4b1,#8dbce9,#b9a5e8);
+  background-size:200% 100%;animation:hs-gradient-flow 5s ease infinite;
+}
+.class-option{
+  background:linear-gradient(112deg,#fff 0%,#fff7f8 48%,#f2f7ff 100%);
+  border-color:rgba(225,232,243,.9);
+  animation:hs-card-in .55s both;
+}
+.class-option:nth-child(1){animation-delay:.04s}
+.class-option:nth-child(2){animation-delay:.09s}
+.class-option:nth-child(3){animation-delay:.14s}
+.class-option:nth-child(4){animation-delay:.19s}
+.class-option:nth-child(5){animation-delay:.24s}
+.class-option:nth-child(6){animation-delay:.29s}
+.class-emoji{background:linear-gradient(145deg,#fff0f2,#eaf3ff);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9)}
+.welcome-card{
+  background:linear-gradient(112deg,#e52b43 0%,#ed7180 31%,#b9a9e7 66%,#65a5e4 100%);
+  background-size:180% 180%;animation:hs-gradient-flow 12s ease infinite,hs-card-in .6s both;
+}
+.welcome-art{animation:hs-soft-float 4s ease-in-out infinite}
+.section-heading{animation:hs-screen-in .5s .08s both}
+.feature-tile{
+  position:relative;isolation:isolate;overflow:hidden;
+  background-size:180% 180%;
+  animation:hs-card-in .55s both;
+}
+.feature-tile:nth-child(1){animation-delay:.05s;background-image:linear-gradient(135deg,#fff0f1 0%,#ffe3e8 48%,#fff8fa 100%)}
+.feature-tile:nth-child(2){animation-delay:.10s;background-image:linear-gradient(135deg,#eaf3ff 0%,#d9eaff 48%,#f5f9ff 100%)}
+.feature-tile:nth-child(3){animation-delay:.15s;background-image:linear-gradient(135deg,#fff3e7 0%,#ffe4cd 48%,#fff9f2 100%)}
+.feature-tile:nth-child(4){animation-delay:.20s;background-image:linear-gradient(135deg,#eaf7f0 0%,#d7f0e2 48%,#f5fcf7 100%)}
+.feature-tile:nth-child(5){animation-delay:.25s;background-image:linear-gradient(135deg,#f2edff 0%,#e5dcff 48%,#faf8ff 100%)}
+.feature-tile:nth-child(6){animation-delay:.30s;background-image:linear-gradient(135deg,#e8f8fb 0%,#d5f0f5 48%,#f5fcfd 100%)}
+.feature-tile:before{
+  content:"";position:absolute;z-index:-1;width:105px;height:105px;right:-42px;top:-48px;
+  border:1px solid rgba(255,255,255,.8);border-radius:50%;
+  box-shadow:0 0 0 13px rgba(255,255,255,.16),0 0 0 27px rgba(255,255,255,.10);
+  transition:transform .45s ease;
+}
+.feature-tile:hover:before{transform:scale(1.28)}
+.feature-icon{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.feature-tile:hover .feature-icon{transform:translateY(-3px) rotate(-5deg) scale(1.07);box-shadow:0 7px 15px rgba(30,65,100,.09)}
+.tip-card{background:linear-gradient(110deg,#fff4f5 0%,#f8f3ff 52%,#eff7ff 100%);border-color:#f0e8f0}
+.module-banner.red-banner{background:linear-gradient(110deg,#fff0f2,#ffe4e9 55%,#fff7f8)}
+.module-banner.blue-banner{background:linear-gradient(110deg,#eaf3ff,#dcecff 55%,#f4f8ff)}
+.grade-period{background:linear-gradient(145deg,#fff,#f5f8ff 100%)}
+.student-grade-head{background:linear-gradient(110deg,#fff0f2,#f4f0ff 55%,#edf6ff)}
+.panel-card,.about-card{background:linear-gradient(145deg,#fff 0%,#faf7ff 55%,#f2f8ff 100%)}
+.btn-primary{background:linear-gradient(105deg,#e52b43 0%,#ed7180 48%,#d94a73 100%);background-size:180% 100%}
+.btn-primary:hover{background-position:100% 50%}
+.login-icon{animation:hs-soft-float 3.5s ease-in-out infinite,hs-glow-pulse 3.5s ease-in-out infinite}
+.staff-dashboard button{background:linear-gradient(145deg,#fff 0%,#fff4f5 55%,#f0f6ff 100%);animation:hs-card-in .5s both}
+.staff-dashboard button:nth-child(2n){animation-delay:.08s}
+.staff-dashboard button:nth-child(3n){animation-delay:.16s}
+.bottom-nav button.nav-active svg{filter:drop-shadow(0 3px 5px rgba(229,43,67,.25));animation:hs-soft-float 2.8s ease-in-out infinite}
+.modal-card{animation:hs-card-in .35s cubic-bezier(.2,.75,.25,1) both}
+.toast{animation:hs-card-in .32s cubic-bezier(.2,.75,.25,1) both}
+@media(prefers-reduced-motion:reduce){
+  .class-screen,.login-screen,.page-content,.more-page,.module,.class-option,.welcome-card,
+  .section-heading,.feature-tile,.staff-dashboard button,.login-icon,.modal-card,.toast,
+  .bottom-nav button.nav-active svg{animation:none!important}
+}
