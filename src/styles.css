@@ -403,3 +403,6 @@ body{background:#f5f8fc;color:#14294b}
 
 /* Consulta de médias por nome e ano */
 .grade-results-area{margin-top:18px;padding:4px 0 10px}.grade-results-area .subhead{margin-top:8px}.student-list button{width:100%;display:block;text-align:left;background:#fff;border:0;border-radius:10px;padding:10px;margin:3px 0;color:#294b70}.student-list button b,.student-list button small{display:block}.student-list button small{font-size:10px;color:#8291a5;margin-top:3px}
+
+/* Aumenta em 1,3x a tipografia da área de matérias e notas */
+.grade-results-area .subhead{font-size:18.2px}.grade-results-area .subject-row{font-size:15.6px;padding:13px 4px}.grade-results-area .subject-scores{font-size:11.7px;line-height:1.5}
