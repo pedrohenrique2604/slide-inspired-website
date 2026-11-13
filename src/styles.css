@@ -406,3 +406,63 @@ body{background:#f5f8fc;color:#14294b}
 
 /* Aumenta em 1,3x a tipografia da área de matérias e notas */
 .grade-results-area .subhead{font-size:18.2px}.grade-results-area .subject-row{font-size:15.6px;padding:13px 4px}.grade-results-area .subject-scores{font-size:11.7px;line-height:1.5}
+
+
+/* HELP SCHOOL — renovação visual sem alterar telas, fluxos ou funcionalidades */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+:root{
+  font-family:"Fredoka",system-ui,sans-serif;
+  color:oklch(0.36 0.14 264);
+  background:oklch(0.97 0.012 250);
+  --brand-red:oklch(0.58 0.22 27);
+  --brand-sky:oklch(0.68 0.13 235);
+  --brand-navy:oklch(0.36 0.14 264);
+  --surface-border:oklch(0.91 0.02 255);
+  --radius:1.25rem;
+  --shadow-soft:0 8px 24px -10px color-mix(in oklab,var(--brand-sky) 35%,transparent);
+  --shadow-glow:0 18px 40px -12px color-mix(in oklab,var(--brand-red) 42%,transparent);
+}
+html,body{font-family:"Fredoka",system-ui,sans-serif;background:oklch(0.97 0.012 250);color:var(--brand-navy)}
+body{background-image:radial-gradient(oklch(0.87 0.025 250 / .38) 1px,transparent 1px);background-size:20px 20px}
+.app-shell{border-radius:0 0 30px 30px;box-shadow:0 18px 65px -28px oklch(0.36 0.14 264 / .25)}
+.splash{background:linear-gradient(135deg,#fff 0%,oklch(0.97 0.025 15) 48%,oklch(0.94 0.045 235) 100%)}
+.splash:before{background:linear-gradient(135deg,var(--brand-red),oklch(0.78 0.12 10));opacity:.88}
+.splash:after{background:linear-gradient(135deg,var(--brand-navy),var(--brand-sky));opacity:.88}
+.splash h1{font-family:"Fredoka",system-ui,sans-serif;font-weight:700;letter-spacing:-1.2px}
+.splash h1 span{background:linear-gradient(120deg,var(--brand-red) 0%,oklch(0.55 0.2 350) 45%,var(--brand-sky) 100%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.brand-mark{border-radius:32px;box-shadow:var(--shadow-soft),inset 0 0 0 1px #ffffff}
+.btn{border-radius:var(--radius);font-weight:600;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.btn:active,.feature-tile:active,.class-option:active,.staff-dashboard button:active{transform:scale(.96)}
+.btn-primary{background:linear-gradient(120deg,var(--brand-red) 0%,oklch(0.55 0.2 350) 48%,var(--brand-sky) 100%);box-shadow:var(--shadow-glow);position:relative;overflow:hidden}
+.btn-outline{border-radius:var(--radius);border-color:var(--surface-border);box-shadow:0 3px 10px oklch(0.36 0.14 264 / .045)}
+.simple-header,.topbar{border-color:var(--surface-border)}
+.topbar{background:#ffffffeb;backdrop-filter:blur(16px)}
+.brand-small,.module-header h1,.class-intro h1,.login-screen h1,.more-page h1,.section-heading h2,.subhead{color:var(--brand-navy)}
+.brand-small svg,.brand-small .lucide{color:var(--brand-red)}
+.class-option{border-radius:22px;border-color:var(--surface-border);box-shadow:var(--shadow-soft)}
+.class-emoji,.login-icon,.avatar-btn,.back-circle,.date-box,.tip-icon,.feature-icon{border-radius:18px}
+.connected-card,.demo-hint{border-radius:20px}
+.welcome-card{border-radius:28px;background:linear-gradient(120deg,var(--brand-red) 0%,oklch(0.55 0.2 350) 48%,var(--brand-sky) 100%);box-shadow:var(--shadow-glow)}
+.feature-tile{border-radius:24px;box-shadow:var(--shadow-soft),inset 0 0 0 1px #ffffffb8;transition:transform .2s ease,box-shadow .2s ease}
+.feature-tile:hover{box-shadow:0 12px 28px -12px color-mix(in oklab,var(--brand-sky) 48%,transparent)}
+.feature-icon{background:#ffffffdf;box-shadow:0 4px 12px oklch(0.36 0.14 264 / .08)}
+.tip-card,.module-banner,.panel-card,.about-card,.grade-period,.student-grade-head,.lost-card,.event-card{border-radius:22px}
+.module-banner{border:1px solid color-mix(in oklab,var(--surface-border) 72%,transparent)}
+.red-banner,.module-banner.red-banner{background:linear-gradient(120deg,oklch(0.96 0.035 20),#fff);color:var(--brand-red)}
+.blue-banner,.module-banner.blue-banner{background:linear-gradient(120deg,oklch(0.95 0.04 235),#fff);color:var(--brand-navy)}
+.stack-form input,.stack-form select,.stack-form textarea,.modal-card input,.modal-card select,.modal-card textarea,.search-label input{
+  border-radius:17px;background:#fff;border-color:var(--surface-border);padding:13px 15px
+}
+.stack-form input:focus,.stack-form select:focus,.stack-form textarea:focus,.modal-card input:focus,.modal-card textarea:focus{
+  border-color:var(--brand-sky);box-shadow:0 0 0 3px color-mix(in oklab,var(--brand-sky) 24%,transparent)
+}
+.bottom-nav{background:#ffffffed;backdrop-filter:blur(16px);border-color:var(--surface-border);border-radius:22px 22px 0 0;box-shadow:0 -8px 26px oklch(0.36 0.14 264 / .07)}
+.bottom-nav .nav-active{color:var(--brand-red)}
+.modal-card{border-radius:28px;box-shadow:0 22px 60px oklch(0.36 0.14 264 / .18)}
+.toast{border-radius:18px}
+.staff-dashboard button{border-radius:22px;border-color:var(--surface-border);box-shadow:var(--shadow-soft)}
+.class-option,.feature-tile,.panel-card,.about-card,.modal-card{transition:border-radius .2s ease,box-shadow .2s ease,transform .2s ease}
+@keyframes hs-shimmer{0%,70%,100%{left:-45%}85%{left:130%}}
+@keyframes hs-pop{0%{opacity:0;transform:scale(.92)}75%{opacity:1;transform:scale(1.025)}100%{transform:scale(1)}}
+.modal-card{animation:hs-pop .36s cubic-bezier(.34,1.56,.64,1) both}
+@media(prefers-reduced-motion:reduce){.modal-card{animation:none!important}}
