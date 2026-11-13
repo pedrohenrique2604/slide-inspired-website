@@ -397,3 +397,6 @@ body{background:#f5f8fc;color:#14294b}
 @media(prefers-reduced-motion:reduce){
   .splash.is-launching,.splash.is-launching *{animation:none!important}
 }
+
+/* Matérias com notas por período */
+.subject-row>span{font-weight:800;color:#294b70;min-width:82px}.subject-scores{font-size:9px;color:#66809b;text-align:right;line-height:1.45;max-width:68%;font-weight:800}.subject-manage-list{display:grid;gap:2px;max-height:250px;overflow:auto;padding-right:3px}.subject-manage-list .subject-row{padding:7px 2px}
