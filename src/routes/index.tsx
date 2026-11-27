@@ -124,9 +124,9 @@ function HelpSchool() {
   function loginStaff(e: FormEvent) {
     e.preventDefault();
     const normalized = staffName.trim().toLocaleLowerCase("pt-BR");
-    const found = normalized === "diretora exemplo" && staffPass === "Direção@2026"
+    const found = normalized === "diretora exemplo" && staffPass === "Direção@" + "2026"
       ? { name: "Diretora Exemplo", role: "director" as Role }
-      : normalized === "professor exemplo" && staffPass === "Professor@2026"
+      : normalized === "professor exemplo" && staffPass === "Professor@" + "2026"
         ? { name: "Professor Exemplo", role: "teacher" as Role } : null;
     if (!found) { notify("Nome ou senha incorretos."); return; }
     setStaff(found); setScreen(found.role === "director" ? "home" : "classes"); setSection(found.role === "director" ? "staff" : "home"); setYear(null); setStaffName(""); setStaffPass(""); notify("Acesso da equipe liberado!");
@@ -201,7 +201,7 @@ function HelpSchool() {
         <p className="muted center tiny">Help School • Ensino Fundamental</p>
       </main>}
 
-      {screen === "staffLogin" && <main className="login-screen"><button className="back-link" onClick={() => setScreen("classes")}><ArrowLeft size={18}/> Voltar às turmas</button><div className="login-icon"><ShieldCheck size={34}/></div><span className="eyebrow blue">ACESSO RESTRITO</span><h1>Área da equipe</h1><p>Entre com seu nome completo e senha.</p><form className="stack-form" onSubmit={loginStaff}><label>Nome completo<input value={staffName} onChange={e=>setStaffName(e.target.value)} placeholder="Seu nome completo" required/></label><label>Senha<input type="password" value={staffPass} onChange={e=>setStaffPass(e.target.value)} placeholder="Sua senha" required/></label><button className="btn btn-primary btn-block">Entrar <ArrowLeft className="rotate-180" size={18}/></button></form><div className="demo-hint"><Info size={16}/> Demonstração: Diretora Exemplo / Direção@2026 ou Professor Exemplo / Professor@2026.</div></main>}
+      {screen === "staffLogin" && <main className="login-screen"><button className="back-link" onClick={() => setScreen("classes")}><ArrowLeft size={18}/> Voltar às turmas</button><div className="login-icon"><ShieldCheck size={34}/></div><span className="eyebrow blue">ACESSO RESTRITO</span><h1>Área da equipe</h1><p>Entre com seu nome completo e senha.</p><form className="stack-form" onSubmit={loginStaff}><label>Nome completo<input value={staffName} onChange={e=>setStaffName(e.target.value)} placeholder="Seu nome completo" required/></label><label>Senha<input type="password" value={staffPass} onChange={e=>setStaffPass(e.target.value)} placeholder="Sua senha" required/></label><button className="btn btn-primary btn-block">Entrar <ArrowLeft className="rotate-180" size={18}/></button></form></main>}
 
       {(screen === "home" || screen === "more") && <><header className="topbar"><div className="brand-small"><GraduationCap/> HELP SCHOOL</div><button className="avatar-btn" onClick={() => setScreen("more")}><Menu/></button></header>
         {screen === "more" ? <main className="page-content more-page"><span className="eyebrow blue">MENU</span><h1>Mais opções</h1><button className="btn btn-danger btn-block" onClick={() => { setGradeStudent(null); setScreen("classes"); setYear(null); setSection("home"); }}><Users size={18}/> Trocar de turma</button><section className="about-card"><div className="about-logo"><GraduationCap size={30}/></div><h2>Sobre o Help School</h2><p>Uma plataforma criada para deixar a rotina escolar mais organizada, aproximar a comunidade e apoiar a aprendizagem.</p><div className="about-meta"><span>Versão 1.0.0</span><span>Projeto educacional</span></div><small>Créditos pedagógicos: comunidade escolar e equipe Help School.</small></section>{staff && <section className="panel-card"><h3>Conta conectada</h3><p>{staff.name} · {staff.role === "director" ? "Direção" : "Professor(a)"}</p><button className="btn btn-outline btn-block" onClick={logoutStaff}><LogOut size={17}/> Sair da conta</button></section>}</main> : <main className="page-content">
